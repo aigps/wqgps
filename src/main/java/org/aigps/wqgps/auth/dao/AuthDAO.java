@@ -1,5 +1,5 @@
 
-package org.sunleads.auth.dao;
+package org.aigps.wqgps.auth.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,7 +37,6 @@ public class AuthDAO {
 	public static List<String> getResIdListByUserId(String userId,String objId,JdbcTemplate jdbcTemplate){
 		String sql = "SELECT RES_ID FROM WQ_USER_AUTH WHERE USER_ID=? AND OBJ_ID=?";
 		return jdbcTemplate.query(sql,new Object[]{userId,objId}, new RowMapper<String>(){
-			@Override
 			public String mapRow(ResultSet rs, int index) throws SQLException {
 				return rs.getString("RES_ID");
 			}
@@ -48,7 +47,6 @@ public class AuthDAO {
 	public static List<String> getUserIdListByResId(String resId,String objId,String compayId,JdbcTemplate jdbcTemplate){
 		String sql = "SELECT USER_ID FROM WQ_USER_AUTH WHERE RES_ID=? AND OBJ_ID=? AND COMPANY_ID=?";
 		return jdbcTemplate.query(sql,new Object[]{resId,objId,compayId}, new RowMapper<String>(){
-			@Override
 			public String mapRow(ResultSet rs, int index) throws SQLException {
 				return rs.getString("USER_ID");
 			}
@@ -172,7 +170,6 @@ public class AuthDAO {
 	public static List<String> getResIdListByStaffId(String staffId,String objId,JdbcTemplate jdbcTemplate){
 		String sql = "SELECT RES_ID FROM WQ_STAFF_AUTH WHERE STAFF_ID=? AND OBJ_ID=?";
 		return jdbcTemplate.query(sql,new Object[]{staffId,objId}, new RowMapper<String>(){
-			@Override
 			public String mapRow(ResultSet rs, int index) throws SQLException {
 				return rs.getString("RES_ID");
 			}
@@ -183,7 +180,6 @@ public class AuthDAO {
 	public static List<String> getStaffIdListByResId(String resId,String objId,String compayId,JdbcTemplate jdbcTemplate){
 		String sql = "SELECT STAFF_ID FROM WQ_STAFF_AUTH WHERE RES_ID=? AND OBJ_ID=? AND COMPANY_ID=?";
 		return jdbcTemplate.query(sql,new Object[]{resId,objId,compayId}, new RowMapper<String>(){
-			@Override
 			public String mapRow(ResultSet rs, int index) throws SQLException {
 				return rs.getString("STAFF_ID");
 			}

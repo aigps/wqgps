@@ -1,9 +1,9 @@
 
-package org.sunleads.auth.impl;
+package org.aigps.wqgps.auth.impl;
 
 import java.util.List;
 
-import org.sunleads.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqAuthObj;
 
 /**
  * @Title£º<Àà±êÌâ>
