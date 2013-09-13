@@ -1,20 +1,19 @@
-package org.sunleads.module.sms.service;
+package org.aigps.wqgps.module.sms.service;
 
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqSmsH;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.sms.smgp.ISmsSender;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.util.SqlStringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqSmsH;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.sms.smgp.DxSmsSender;
-import org.sunleads.module.sms.smgp.ISmsSender;
 
 @Component
 @Transactional

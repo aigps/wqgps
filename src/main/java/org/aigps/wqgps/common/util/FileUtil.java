@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

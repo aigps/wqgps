@@ -1,10 +1,10 @@
-package org.sunleads.socket.process;
+package org.aigps.wqgps.socket.process;
 
+import org.aigps.wqgps.socket.process.cmd.AlarmProcesser;
+import org.aigps.wqgps.socket.process.cmd.SmsProcesser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.socket.process.cmd.AlarmProcesser;
-import org.sunleads.socket.process.cmd.SmsProcesser;
 
 /**
  * 回复下发指令处理器
@@ -20,7 +20,6 @@ public class CmdProcesser implements MsgProcesser {
 	 */
 	public static final String PROCESS_TYPE = "CMD";
 	
-	@Override
 	public void process(YmAccessMsg accessMsg) {
 		if(accessMsg!=null && accessMsg.getData()!=null){
 			String content = accessMsg.getData();

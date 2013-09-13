@@ -1,36 +1,34 @@
 
-package org.sunleads.module.mobile;
+package org.aigps.wqgps.module.mobile;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.AuthUtil;
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.cache.SessionData;
+import org.aigps.wqgps.common.entity.DcGpsReal;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.log.LogType;
+import org.aigps.wqgps.common.log.LogUtil;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.StrUtil;
+import org.aigps.wqgps.module.location.dao.LocationDAO;
+import org.aigps.wqgps.module.login.service.LoginService;
+import org.aigps.wqgps.socket.CmdTypeEnum;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.cache.SessionData;
-import org.sunleads.common.entity.DcGpsReal;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.log.LogType;
-import org.sunleads.common.log.LogUtil;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.StrUtil;
-import org.sunleads.module.location.dao.LocationDAO;
-import org.sunleads.module.login.service.LoginService;
-import org.sunleads.socket.CmdTypeEnum;
 
 /**
  * @Title£º<Àà±êÌâ>

@@ -1,21 +1,21 @@
-package org.sunleads.module.cmd;
+package org.aigps.wqgps.module.cmd;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.entity.CmdModel;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.socket.CmdTypeEnum;
+import org.aigps.wqgps.socket.CmdUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.entity.CmdModel;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.socket.CmdTypeEnum;
-import org.sunleads.socket.CmdUtil;
 /**
  * 定位服务
  * @author admin

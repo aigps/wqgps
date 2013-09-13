@@ -1,4 +1,4 @@
-package org.sunleads.timing;
+package org.aigps.wqgps.timing;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +7,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.dao.AuthDAO;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.HibernateDAO;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.TimingUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -16,15 +25,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.dao.AuthDAO;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.HibernateDAO;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.TimingUtil;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
 

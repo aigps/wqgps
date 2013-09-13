@@ -1,12 +1,12 @@
-package org.sunleads.common.cache;
+package org.aigps.wqgps.common.cache;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqUserInfo;
 
 @Scope("session")
 @Component

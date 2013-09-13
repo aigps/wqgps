@@ -1,11 +1,11 @@
-package org.sunleads.common.dao;
+package org.aigps.wqgps.common.dao;
 
 import java.util.Collection;
 import java.util.List;
 
+import org.aigps.wqgps.common.util.SqlStringUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.util.SqlStringUtil;
 
 @Component
 @SuppressWarnings({"rawtypes","unchecked"})

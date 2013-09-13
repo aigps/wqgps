@@ -1,22 +1,22 @@
 
-package org.sunleads.auth.impl;
+package org.aigps.wqgps.auth.impl;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.aigps.wqgps.auth.dao.AuthDAO;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.dao.AuthDAO;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * @Title：用户部门权限实现类
@@ -54,7 +54,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 返回当前用户可以看到的所有部门集合
 	 */
-	@Override
 	public List<Object> getResList(WqAuthObj obj) {
 		WqUserInfo user = AppUtil.getUserInfo();
 		if(user.getIsAdmin()){
@@ -67,7 +66,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 返回指定用户Id可以看到的所有部门集合
 	 */
-	@Override
 	public List<Object> getResListByOwnerId(WqAuthObj obj, String userId) {
 		List<String> depIdList = AuthDAO.getResIdListByUserId(userId, obj.getId(), jdbcTemplate);
 		return getDepListFromCache(depIdList);
@@ -114,7 +112,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 返回哪些用户有权限看到指定部门Id
 	 */
-	@Override
 	public List<Object> getOwnerListByResId(WqAuthObj obj, String depId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		List<String> userIdList = AuthDAO.getUserIdListByResId(depId, obj.getId(), companyId, jdbcTemplate);
@@ -124,7 +121,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 保存用户Id有权限看到的部门Id集合
 	 */
-	@Override
 	public Boolean saveResListByOwnerId(WqAuthObj obj, List<String> depIdList,String userId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -135,7 +131,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 保存部门Id的所有用户权限
 	 */
-	@Override
 	public Boolean saveOwnerListByResId(WqAuthObj obj,List<String> userIdList,String depId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -146,7 +141,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 删除指定用户Id所有部门权限
 	 */
-	@Override
 	public Boolean deleteResListByOwnerId(WqAuthObj obj, String userId) {
 		return AuthDAO.deleteUserResByUserId(userId, obj.getId(), jdbcTemplate);
 	}
@@ -154,7 +148,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 删除指定部门Id所有权限
 	 */
-	@Override
 	public Boolean deleteResListByResId(WqAuthObj obj,String depId){
 		return AuthDAO.deleteUserResByResId(depId, obj.getId(), jdbcTemplate);
 	}
@@ -162,7 +155,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 为多个用户添加多个部门
 	 */
-	@Override
 	public Boolean addResList(WqAuthObj obj,List<String> userIdList,List<String> depIdList){
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		return AuthDAO.addUsersResList(obj.getId(), userIdList, depIdList, companyId, jdbcTemplate);
@@ -171,7 +163,6 @@ public class UserDepAuth implements IAuthObj{
 	/**
 	 * 为多个用户移除多个部门
 	 */
-	@Override
 	public Boolean deleteResList(WqAuthObj obj,List<String> userIdList,List<String> depIdList){
 		return AuthDAO.deleteUsersResList(obj.getId(), userIdList, depIdList, jdbcTemplate);
 	}

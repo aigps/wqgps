@@ -1,15 +1,15 @@
 
-package org.sunleads.module.test;
+package org.aigps.wqgps.module.test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.sysmanager.service.SysManagerService;
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.sysmanager.service.SysManagerService;
 
 /**
  * @Title£º<Àà±êÌâ>

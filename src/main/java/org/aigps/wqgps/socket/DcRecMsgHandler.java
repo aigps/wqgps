@@ -1,16 +1,16 @@
-package org.sunleads.socket;
+package org.aigps.wqgps.socket;
 
 import java.util.Observable;
 import java.util.Observer;
 
+import org.aigps.wqgps.socket.process.CmdProcesser;
+import org.aigps.wqgps.socket.process.CmdRespProcesser;
+import org.aigps.wqgps.socket.process.GpsPostionProcesser;
+import org.aigps.wqgps.socket.process.MsgProcesser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.protocol.net.client.DcRecMsgPool;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.socket.process.CmdProcesser;
-import org.sunleads.socket.process.CmdRespProcesser;
-import org.sunleads.socket.process.GpsPostionProcesser;
-import org.sunleads.socket.process.MsgProcesser;
 
 /**
  * 接收消息处理类
@@ -20,7 +20,6 @@ import org.sunleads.socket.process.MsgProcesser;
 public class DcRecMsgHandler implements Observer {
 	private static final Log log = LogFactory.getLog(DcRecMsgHandler.class);
 	
-	@Override
 	public void update(Observable obs, Object args) {
 		try {
 			if(obs!=null && obs instanceof DcRecMsgPool){

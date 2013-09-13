@@ -5,7 +5,7 @@
  * 
  * $Id: SimpleHibernateDao.java 1205 2010-09-09 15:12:17Z calvinxiu $
  */
-package org.sunleads.common.dao;
+package org.aigps.wqgps.common.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -39,8 +39,8 @@ public class HibernateDAO<T, PK extends Serializable> {
 	protected Class<T> entityClass;
 
 	/**
-	 * 用于Dao层子类使用的构造函数.
-	 * 通过子类的泛型定义取得对象类型Class.
+	 * 鐢ㄤ簬Dao灞傚瓙绫讳娇鐢ㄧ殑鏋勯�鍑芥暟.
+	 * 閫氳繃瀛愮被鐨勬硾鍨嬪畾涔夊彇寰楀璞＄被鍨婥lass.
 	 * eg.
 	 * public class UserDao extends SimpleHibernateDao<User, Long>
 	 */
@@ -49,10 +49,10 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 通过反射, 获得Class定义中声明的父类的泛型参数的类型.
-	 * 如无法找到, 返回Object.class.
+	 * 閫氳繃鍙嶅皠, 鑾峰緱Class瀹氫箟涓０鏄庣殑鐖剁被鐨勬硾鍨嬪弬鏁扮殑绫诲瀷.
+	 * 濡傛棤娉曟壘鍒� 杩斿洖Object.class.
 	 * 
-	 * 如public UserDao extends HibernateDao<User,Long>
+	 * 濡俻ublic UserDao extends HibernateDao<User,Long>
 	 *
 	 * @param clazz clazz The class to introspect
 	 * @param index the Index of the generic ddeclaration,start from 0.
@@ -78,8 +78,8 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 用于用于省略Dao层, 在Service层直接使用通用SimpleHibernateDao的构造函数.
-	 * 在构造函数中定义对象类型Class.
+	 * 鐢ㄤ簬鐢ㄤ簬鐪佺暐Dao灞� 鍦⊿ervice灞傜洿鎺ヤ娇鐢ㄩ�鐢⊿impleHibernateDao鐨勬瀯閫犲嚱鏁�
+	 * 鍦ㄦ瀯閫犲嚱鏁颁腑瀹氫箟瀵硅薄绫诲瀷Class.
 	 * eg.
 	 * SimpleHibernateDao<User, Long> userDao = new SimpleHibernateDao<User, Long>(sessionFactory, User.class);
 	 */
@@ -89,14 +89,14 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 取得sessionFactory.
+	 * 鍙栧緱sessionFactory.
 	 */
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
 
 	/**
-	 * 采用@Autowired按类型注入SessionFactory, 当有多个SesionFactory的时候在子类重载本函数.
+	 * 閲囩敤@Autowired鎸夌被鍨嬫敞鍏essionFactory, 褰撴湁澶氫釜SesionFactory鐨勬椂鍊欏湪瀛愮被閲嶈浇鏈嚱鏁�
 	 */
 	@Autowired
 	public void setSessionFactory(final SessionFactory sessionFactory) {
@@ -104,65 +104,65 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 取得当前Session.
+	 * 鍙栧緱褰撳墠Session.
 	 */
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
 	/**
-	 * 保存新增或修改的对象.
+	 * 淇濆瓨鏂板鎴栦慨鏀圭殑瀵硅薄.
 	 */
 	public void save(final T entity) {
-		Assert.notNull(entity, "entity不能为空");
+		Assert.notNull(entity, "entity涓嶈兘涓虹┖");
 		getSession().saveOrUpdate(entity);
 		logger.debug("save entity: {}", entity);
 	}
 
 	/**
-	 * 删除对象.
+	 * 鍒犻櫎瀵硅薄.
 	 * 
-	 * @param entity 对象必须是session中的对象或含id属性的transient对象.
+	 * @param entity 瀵硅薄蹇呴』鏄痵ession涓殑瀵硅薄鎴栧惈id灞炴�鐨則ransient瀵硅薄.
 	 */
 	public void delete(final T entity) {
-		Assert.notNull(entity, "entity不能为空");
+		Assert.notNull(entity, "entity涓嶈兘涓虹┖");
 		getSession().delete(entity);
 		logger.debug("delete entity: {}", entity);
 	}
 
 	/**
-	 * 按id删除对象.
+	 * 鎸塱d鍒犻櫎瀵硅薄.
 	 */
 	public void delete(final PK id) {
-		Assert.notNull(id, "id不能为空");
+		Assert.notNull(id, "id涓嶈兘涓虹┖");
 		delete(get(id));
 		logger.debug("delete entity {},id is {}", entityClass.getSimpleName(), id);
 	}
 
 	/**
-	 * 按id获取对象.
+	 * 鎸塱d鑾峰彇瀵硅薄.
 	 */
 	public T get(final PK id) {
-		Assert.notNull(id, "id不能为空");
+		Assert.notNull(id, "id涓嶈兘涓虹┖");
 		return (T) getSession().load(entityClass, id);
 	}
 
 	/**
-	 * 按id列表获取对象列表.
+	 * 鎸塱d鍒楄〃鑾峰彇瀵硅薄鍒楄〃.
 	 */
 	public List<T> get(final Collection<PK> ids) {
 		return find(Restrictions.in(getIdName(), ids));
 	}
 
 	/**
-	 *	获取全部对象.
+	 *	鑾峰彇鍏ㄩ儴瀵硅薄.
 	 */
 	public List<T> getAll() {
 		return find();
 	}
 
 	/**
-	 *	获取全部对象, 支持按属性行序.
+	 *	鑾峰彇鍏ㄩ儴瀵硅薄, 鏀寔鎸夊睘鎬ц搴�
 	 */
 	public List<T> getAll(String orderByProperty, boolean isAsc) {
 		Criteria c = createCriteria();
@@ -175,87 +175,87 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 按属性查找对象列表, 匹配方式为相等.
+	 * 鎸夊睘鎬ф煡鎵惧璞″垪琛� 鍖归厤鏂瑰紡涓虹浉绛�
 	 */
 	public List<T> findBy(final String propertyName, final Object value) {
-		Assert.hasText(propertyName, "propertyName不能为空");
+		Assert.hasText(propertyName, "propertyName涓嶈兘涓虹┖");
 		Criterion criterion = Restrictions.eq(propertyName, value);
 		return find(criterion);
 	}
 
 	/**
-	 * 按属性查找唯一对象, 匹配方式为相等.
+	 * 鎸夊睘鎬ф煡鎵惧敮涓�璞� 鍖归厤鏂瑰紡涓虹浉绛�
 	 */
 	public T findUniqueBy(final String propertyName, final Object value) {
-		Assert.hasText(propertyName, "propertyName不能为空");
+		Assert.hasText(propertyName, "propertyName涓嶈兘涓虹┖");
 		Criterion criterion = Restrictions.eq(propertyName, value);
 		return (T) createCriteria(criterion).uniqueResult();
 	}
 
 	/**
-	 * 按HQL查询对象列表.
+	 * 鎸塇QL鏌ヨ瀵硅薄鍒楄〃.
 	 * 
-	 * @param values 数量可变的参数,按顺序绑定.
+	 * @param values 鏁伴噺鍙彉鐨勫弬鏁�鎸夐『搴忕粦瀹�
 	 */
 	public <X> List<X> find(final String hql, final Object... values) {
 		return createQuery(hql, values).list();
 	}
 
 	/**
-	 * 按HQL查询对象列表.
+	 * 鎸塇QL鏌ヨ瀵硅薄鍒楄〃.
 	 * 
-	 * @param values 命名参数,按名称绑定.
+	 * @param values 鍛藉悕鍙傛暟,鎸夊悕绉扮粦瀹�
 	 */
 	public <X> List<X> find(final String hql, final Map<String, ?> values) {
 		return createQuery(hql, values).list();
 	}
 
 	/**
-	 * 按HQL查询唯一对象.
+	 * 鎸塇QL鏌ヨ鍞竴瀵硅薄.
 	 * 
-	 * @param values 数量可变的参数,按顺序绑定.
+	 * @param values 鏁伴噺鍙彉鐨勫弬鏁�鎸夐『搴忕粦瀹�
 	 */
 	public <X> X findUnique(final String hql, final Object... values) {
 		return (X) createQuery(hql, values).uniqueResult();
 	}
 
 	/**
-	 * 按HQL查询唯一对象.
+	 * 鎸塇QL鏌ヨ鍞竴瀵硅薄.
 	 * 
-	 * @param values 命名参数,按名称绑定.
+	 * @param values 鍛藉悕鍙傛暟,鎸夊悕绉扮粦瀹�
 	 */
 	public <X> X findUnique(final String hql, final Map<String, ?> values) {
 		return (X) createQuery(hql, values).uniqueResult();
 	}
 
 	/**
-	 * 执行HQL进行批量修改/删除操作.
+	 * 鎵цHQL杩涜鎵归噺淇敼/鍒犻櫎鎿嶄綔.
 	 * 
-	 * @param values 数量可变的参数,按顺序绑定.
-	 * @return 更新记录数.
+	 * @param values 鏁伴噺鍙彉鐨勫弬鏁�鎸夐『搴忕粦瀹�
+	 * @return 鏇存柊璁板綍鏁�
 	 */
 	public int batchExecute(final String hql, final Object... values) {
 		return createQuery(hql, values).executeUpdate();
 	}
 
 	/**
-	 * 执行HQL进行批量修改/删除操作.
+	 * 鎵цHQL杩涜鎵归噺淇敼/鍒犻櫎鎿嶄綔.
 	 * 
-	 * @param values 命名参数,按名称绑定.
-	 * @return 更新记录数.
+	 * @param values 鍛藉悕鍙傛暟,鎸夊悕绉扮粦瀹�
+	 * @return 鏇存柊璁板綍鏁�
 	 */
 	public int batchExecute(final String hql, final Map<String, ?> values) {
 		return createQuery(hql, values).executeUpdate();
 	}
 
 	/**
-	 * 根据查询HQL与参数列表创建Query对象.
-	 * 与find()函数可进行更加灵活的操作.
+	 * 鏍规嵁鏌ヨHQL涓庡弬鏁板垪琛ㄥ垱寤篞uery瀵硅薄.
+	 * 涓巉ind()鍑芥暟鍙繘琛屾洿鍔犵伒娲荤殑鎿嶄綔.
 	 * 
-	 * @param values 数量可变的参数,按顺序绑定.
+	 * @param values 鏁伴噺鍙彉鐨勫弬鏁�鎸夐『搴忕粦瀹�
 	 */
 	public Query createQuery(final String queryString, final Object... values) {
-		Assert.hasText(queryString, "queryString不能为空");
+		Assert.hasText(queryString, "queryString涓嶈兘涓虹┖");
 		Query query = getSession().createQuery(queryString);
 		if (values != null) {
 			for (int i = 0; i < values.length; i++) {
@@ -266,13 +266,13 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 根据查询HQL与参数列表创建Query对象.
-	 * 与find()函数可进行更加灵活的操作.
+	 * 鏍规嵁鏌ヨHQL涓庡弬鏁板垪琛ㄥ垱寤篞uery瀵硅薄.
+	 * 涓巉ind()鍑芥暟鍙繘琛屾洿鍔犵伒娲荤殑鎿嶄綔.
 	 * 
-	 * @param values 命名参数,按名称绑定.
+	 * @param values 鍛藉悕鍙傛暟,鎸夊悕绉扮粦瀹�
 	 */
 	public Query createQuery(final String queryString, final Map<String, ?> values) {
-		Assert.hasText(queryString, "queryString不能为空");
+		Assert.hasText(queryString, "queryString涓嶈兘涓虹┖");
 		Query query = getSession().createQuery(queryString);
 		if (values != null) {
 			query.setProperties(values);
@@ -281,28 +281,28 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 按Criteria查询对象列表.
+	 * 鎸塁riteria鏌ヨ瀵硅薄鍒楄〃.
 	 * 
-	 * @param criterions 数量可变的Criterion.
+	 * @param criterions 鏁伴噺鍙彉鐨凜riterion.
 	 */
 	public List<T> find(final Criterion... criterions) {
 		return createCriteria(criterions).list();
 	}
 
 	/**
-	 * 按Criteria查询唯一对象.
+	 * 鎸塁riteria鏌ヨ鍞竴瀵硅薄.
 	 * 
-	 * @param criterions 数量可变的Criterion.
+	 * @param criterions 鏁伴噺鍙彉鐨凜riterion.
 	 */
 	public T findUnique(final Criterion... criterions) {
 		return (T) createCriteria(criterions).uniqueResult();
 	}
 
 	/**
-	 * 根据Criterion条件创建Criteria.
-	 * 与find()函数可进行更加灵活的操作.
+	 * 鏍规嵁Criterion鏉′欢鍒涘缓Criteria.
+	 * 涓巉ind()鍑芥暟鍙繘琛屾洿鍔犵伒娲荤殑鎿嶄綔.
 	 * 
-	 * @param criterions 数量可变的Criterion.
+	 * @param criterions 鏁伴噺鍙彉鐨凜riterion.
 	 */
 	public Criteria createCriteria(final Criterion... criterions) {
 		Criteria criteria = getSession().createCriteria(entityClass);
@@ -313,27 +313,27 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 初始化对象.
-	 * 使用load()方法得到的仅是对象Proxy, 在传到View层前需要进行初始化.
-	 * 如果传入entity, 则只初始化entity的直接属性,但不会初始化延迟加载的关联集合和属性.
-	 * 如需初始化关联属性,需执行:
-	 * Hibernate.initialize(user.getRoles())，初始化User的直接属性和关联集合.
-	 * Hibernate.initialize(user.getDescription())，初始化User的直接属性和延迟加载的Description属性.
+	 * 鍒濆鍖栧璞�
+	 * 浣跨敤load()鏂规硶寰楀埌鐨勪粎鏄璞roxy, 鍦ㄤ紶鍒癡iew灞傚墠闇�杩涜鍒濆鍖�
+	 * 濡傛灉浼犲叆entity, 鍒欏彧鍒濆鍖杄ntity鐨勭洿鎺ュ睘鎬�浣嗕笉浼氬垵濮嬪寲寤惰繜鍔犺浇鐨勫叧鑱旈泦鍚堝拰灞炴�.
+	 * 濡傞渶鍒濆鍖栧叧鑱斿睘鎬�闇�墽琛�
+	 * Hibernate.initialize(user.getRoles())锛屽垵濮嬪寲User鐨勭洿鎺ュ睘鎬у拰鍏宠仈闆嗗悎.
+	 * Hibernate.initialize(user.getDescription())锛屽垵濮嬪寲User鐨勭洿鎺ュ睘鎬у拰寤惰繜鍔犺浇鐨凞escription灞炴�.
 	 */
 	public void initProxyObject(Object proxy) {
 		Hibernate.initialize(proxy);
 	}
 
 	/**
-	 * Flush当前Session.
+	 * Flush褰撳墠Session.
 	 */
 	public void flush() {
 		getSession().flush();
 	}
 
 	/**
-	 * 为Query添加distinct transformer.
-	 * 预加载关联对象的HQL会引起主对象重复, 需要进行distinct处理.
+	 * 涓篞uery娣诲姞distinct transformer.
+	 * 棰勫姞杞藉叧鑱斿璞＄殑HQL浼氬紩璧蜂富瀵硅薄閲嶅, 闇�杩涜distinct澶勭悊.
 	 */
 	public Query distinct(Query query) {
 		query.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
@@ -341,8 +341,8 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 为Criteria添加distinct transformer.
-	 * 预加载关联对象的HQL会引起主对象重复, 需要进行distinct处理.
+	 * 涓篊riteria娣诲姞distinct transformer.
+	 * 棰勫姞杞藉叧鑱斿璞＄殑HQL浼氬紩璧蜂富瀵硅薄閲嶅, 闇�杩涜distinct澶勭悊.
 	 */
 	public Criteria distinct(Criteria criteria) {
 		criteria.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
@@ -350,7 +350,7 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 取得对象的主键名.
+	 * 鍙栧緱瀵硅薄鐨勪富閿悕.
 	 */
 	public String getIdName() {
 		ClassMetadata meta = getSessionFactory().getClassMetadata(entityClass);
@@ -358,9 +358,9 @@ public class HibernateDAO<T, PK extends Serializable> {
 	}
 
 	/**
-	 * 判断对象的属性值在数据库内是否唯一.
+	 * 鍒ゆ柇瀵硅薄鐨勫睘鎬у�鍦ㄦ暟鎹簱鍐呮槸鍚﹀敮涓�
 	 * 
-	 * 在修改对象的情景下,如果属性新修改的值(value)等于属性原来的值(orgValue)则不作比较.
+	 * 鍦ㄤ慨鏀瑰璞＄殑鎯呮櫙涓�濡傛灉灞炴�鏂颁慨鏀圭殑鍊�value)绛変簬灞炴�鍘熸潵鐨勫�(orgValue)鍒欎笉浣滄瘮杈�
 	 */
 	public boolean isPropertyUnique(final String propertyName, final Object newValue, final Object oldValue) {
 		if (newValue == null || newValue.equals(oldValue)) {

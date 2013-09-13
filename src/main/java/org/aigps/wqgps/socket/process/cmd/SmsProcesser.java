@@ -1,19 +1,19 @@
-package org.sunleads.socket.process.cmd;
+package org.aigps.wqgps.socket.process.cmd;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicService;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqEmergency;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.sms.smgp.ISmsSender;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.ym.model.YmAccessMsg;
 import org.gps.ym.model.YmCmdModel;
-import org.springframework.security.core.codec.Base64;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicService;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqEmergency;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.sms.smgp.ISmsSender;
+import org.springframework.security.crypto.codec.Base64;
 
 /**
  * 回复下发指令处理器

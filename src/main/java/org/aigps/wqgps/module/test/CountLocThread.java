@@ -1,10 +1,10 @@
 
-package org.sunleads.module.test;
+package org.aigps.wqgps.module.test;
 
 import java.util.Map;
 
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.DcGpsReal;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.DcGpsReal;
 
 /**
  * @Title£º<Àà±êÌâ>

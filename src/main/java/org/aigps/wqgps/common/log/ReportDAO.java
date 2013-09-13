@@ -1,4 +1,4 @@
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

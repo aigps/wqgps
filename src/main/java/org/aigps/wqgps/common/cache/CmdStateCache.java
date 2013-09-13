@@ -1,4 +1,4 @@
-package org.sunleads.common.cache;
+package org.aigps.wqgps.common.cache;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.aigps.wqgps.common.entity.CmdModel;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.entity.CmdModel;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
 
 /**
  * Ö¸Áî×´Ì¬cache

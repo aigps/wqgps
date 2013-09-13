@@ -1,4 +1,4 @@
-package org.sunleads.module.login.servlet;
+package org.aigps.wqgps.module.login.servlet;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * Servlet implementation class LoginServlet

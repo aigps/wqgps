@@ -1,17 +1,17 @@
 
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.comparator.RptTimeComparator;
+import org.aigps.wqgps.common.util.DateUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.sunleads.common.comparator.RptTimeComparator;
-import org.sunleads.common.util.DateUtil;
 
 /**
  * @Title£º<Àà±êÌâ>

@@ -1,4 +1,4 @@
-package org.sunleads.module.report.service;
+package org.aigps.wqgps.module.report.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -9,22 +9,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqClientInfo;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.report.dao.RegionVisitDAO;
+import org.aigps.wqgps.module.report.model.VisitReportModel;
+import org.aigps.wqgps.timing.CacheClientStaffIdMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqClientInfo;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.report.dao.RegionVisitDAO;
-import org.sunleads.module.report.model.VisitReportModel;
-import org.sunleads.timing.CacheClientStaffIdMap;
 /**
  * 该类处理员工和客户之间的关系，来获取员工拜访客户的详细情况
  */

@@ -1,4 +1,4 @@
-package org.sunleads.common.entity;
+package org.aigps.wqgps.common.entity;
 
 import java.io.Serializable;
 import java.sql.Blob;

@@ -1,4 +1,4 @@
-package org.sunleads.timing;
+package org.aigps.wqgps.timing;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,6 +12,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqClientInfo;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.SqlStringUtil;
+import org.aigps.wqgps.common.util.StrUtil;
+import org.aigps.wqgps.common.util.TimingUtil;
+import org.aigps.wqgps.common.util.UIDUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -20,16 +30,6 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqClientInfo;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.SqlStringUtil;
-import org.sunleads.common.util.StrUtil;
-import org.sunleads.common.util.TimingUtil;
-import org.sunleads.common.util.UIDUtil;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
 

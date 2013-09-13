@@ -1,4 +1,4 @@
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.util.ArrayList;
 import java.util.List;

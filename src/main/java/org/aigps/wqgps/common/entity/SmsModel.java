@@ -1,4 +1,4 @@
-package org.sunleads.common.entity;
+package org.aigps.wqgps.common.entity;
 
 public class SmsModel {
 	private String tel;

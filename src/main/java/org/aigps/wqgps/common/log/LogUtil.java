@@ -1,25 +1,25 @@
 
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqLogInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.TimingUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqLogInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.TimingUtil;
 
 
 /**

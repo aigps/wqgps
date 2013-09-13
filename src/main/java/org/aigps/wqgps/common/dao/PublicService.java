@@ -1,4 +1,4 @@
-package org.sunleads.common.dao;
+package org.aigps.wqgps.common.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

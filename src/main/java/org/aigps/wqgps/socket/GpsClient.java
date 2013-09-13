@@ -1,12 +1,12 @@
-package org.sunleads.socket;
+package org.aigps.wqgps.socket;
 
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.netty.util.ChannelUtil;
 import org.gps.protocol.net.client.DcNettyClient;
 import org.gps.protocol.net.client.DcRecMsgPool;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * gpsClient¿Í»§¶Ë

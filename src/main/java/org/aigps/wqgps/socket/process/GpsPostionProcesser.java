@@ -1,24 +1,24 @@
-package org.sunleads.socket.process;
+package org.aigps.wqgps.socket.process;
 
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicService;
+import org.aigps.wqgps.common.entity.DcGpsReal;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqPlanLocateDetail;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.enums.LocateTypeEnum;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.sysmanager.service.SysManagerService;
+import org.aigps.wqgps.module.webservice.WqServiceImpl;
+import org.aigps.wqgps.timing.CachePlanLocateMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicService;
-import org.sunleads.common.entity.DcGpsReal;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqPlanLocateDetail;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.enums.LocateTypeEnum;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.sysmanager.service.SysManagerService;
-import org.sunleads.module.webservice.WqServiceImpl;
-import org.sunleads.timing.CachePlanLocateMap;
 
 /**
  * 定位信息处理者
@@ -34,7 +34,6 @@ public class GpsPostionProcesser implements MsgProcesser {
 	 */
 	public static final String PROCESS_TYPE = "GPS";
 	
-	@Override
 	public void process(YmAccessMsg accessMsg) {
 		if(accessMsg == null || StringUtils.isBlank(accessMsg.getData())){
 			return;

@@ -1,5 +1,5 @@
 
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
 /**
  * @Title£º<Àà±êÌâ>

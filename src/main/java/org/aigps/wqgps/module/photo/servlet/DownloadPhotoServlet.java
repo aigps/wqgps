@@ -1,23 +1,16 @@
-package org.sunleads.module.photo.servlet;
+package org.aigps.wqgps.module.photo.servlet;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.util.AppUtil;
 
 public class DownloadPhotoServlet extends HttpServlet {
 	private static final long serialVersionUID = -912952487L;

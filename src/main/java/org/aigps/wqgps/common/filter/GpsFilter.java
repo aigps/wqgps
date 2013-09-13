@@ -1,5 +1,5 @@
 
-package org.sunleads.common.filter;
+package org.aigps.wqgps.common.filter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -7,14 +7,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.DcGpsHis;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.GpsUtil;
+import org.aigps.wqgps.timing.CacheClientRegionIdMap;
+import org.aigps.wqgps.timing.CacheClientStaffIdMap;
 import org.apache.commons.lang.StringUtils;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.DcGpsHis;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.GpsUtil;
-import org.sunleads.timing.CacheClientRegionIdMap;
-import org.sunleads.timing.CacheClientStaffIdMap;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
 

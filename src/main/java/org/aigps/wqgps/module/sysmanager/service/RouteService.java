@@ -1,22 +1,20 @@
-package org.sunleads.module.sysmanager.service;
+package org.aigps.wqgps.module.sysmanager.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqRouteAssign;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.region.service.RegionService;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqRouteAssign;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.region.service.RegionService;
 
 @Component
 @Transactional

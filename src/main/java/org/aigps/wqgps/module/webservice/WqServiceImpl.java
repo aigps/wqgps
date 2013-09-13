@@ -1,5 +1,5 @@
 
-package org.sunleads.module.webservice;
+package org.aigps.wqgps.module.webservice;
 
 import java.io.OutputStream;
 import java.math.BigDecimal;
@@ -13,32 +13,32 @@ import java.util.regex.Pattern;
 
 import javax.jws.WebService;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.AuthUtil;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.DcGpsReal;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqEleFence;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.admin.service.AdminService;
+import org.aigps.wqgps.module.heb.HebService;
+import org.aigps.wqgps.module.login.service.LoginService;
+import org.aigps.wqgps.socket.CmdUtil;
+import org.aigps.wqgps.timing.CacheDepMap;
+import org.aigps.wqgps.timing.CacheRetrospect;
+import org.aigps.wqgps.timing.CacheStaffMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.DcGpsReal;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqEleFence;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.admin.service.AdminService;
-import org.sunleads.module.heb.HebService;
-import org.sunleads.module.login.service.LoginService;
-import org.sunleads.socket.CmdUtil;
-import org.sunleads.timing.CacheDepMap;
-import org.sunleads.timing.CacheRetrospect;
-import org.sunleads.timing.CacheStaffMap;
 
 @WebService(endpointInterface = "org.sunleads.module.webservice.WqService")
 @Component

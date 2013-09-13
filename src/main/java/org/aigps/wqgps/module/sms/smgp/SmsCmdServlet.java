@@ -1,4 +1,4 @@
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.SmsModel;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.dom4j.dom.DOMDocument;
 import org.dom4j.dom.DOMElement;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.SmsModel;
-import org.sunleads.common.util.AppUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

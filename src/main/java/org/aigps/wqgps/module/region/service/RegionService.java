@@ -1,23 +1,23 @@
-package org.sunleads.module.region.service;
+package org.aigps.wqgps.module.region.service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.UIDUtil;
+import org.aigps.wqgps.module.report.dao.RegionVisitDAO;
+import org.aigps.wqgps.timing.CacheRetrospect;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.UIDUtil;
-import org.sunleads.module.report.dao.RegionVisitDAO;
-import org.sunleads.timing.CacheRetrospect;
 
 @Component
 @Transactional

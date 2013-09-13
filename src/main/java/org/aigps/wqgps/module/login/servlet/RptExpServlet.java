@@ -1,4 +1,4 @@
-package org.sunleads.module.login.servlet;
+package org.aigps.wqgps.module.login.servlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,9 +22,9 @@ import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * Servlet implementation class LoginServlet

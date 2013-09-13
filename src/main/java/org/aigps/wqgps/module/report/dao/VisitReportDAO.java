@@ -1,11 +1,11 @@
 
-package org.sunleads.module.report.dao;
+package org.aigps.wqgps.module.report.dao;
 
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.HibernateDAO;
+import org.aigps.wqgps.common.util.SqlStringUtil;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.dao.HibernateDAO;
-import org.sunleads.common.util.SqlStringUtil;
 
 /**
  * @Title£º<Àà±êÌâ>

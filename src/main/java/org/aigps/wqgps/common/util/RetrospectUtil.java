@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.timing.CacheClientStaffIdMap;
-import org.sunleads.timing.CacheRetrospect;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.timing.CacheClientStaffIdMap;
+import org.aigps.wqgps.timing.CacheRetrospect;
 
 public class RetrospectUtil {
 	

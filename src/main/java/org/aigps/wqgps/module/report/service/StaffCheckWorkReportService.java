@@ -1,4 +1,4 @@
-package org.sunleads.module.report.service;
+package org.aigps.wqgps.module.report.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -11,6 +11,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqClientInfo;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqTravelPlan;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.GvphUtil;
+import org.aigps.wqgps.module.report.dao.CheckWorkReportDAO;
+import org.aigps.wqgps.module.report.dao.RegionVisitDAO;
+import org.aigps.wqgps.module.report.model.CheckWorkReportModel;
+import org.aigps.wqgps.timing.CacheClientRegionIdMap;
+import org.aigps.wqgps.timing.CacheClientStaffIdMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,20 +32,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqClientInfo;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqTravelPlan;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.GvphUtil;
-import org.sunleads.module.report.dao.CheckWorkReportDAO;
-import org.sunleads.module.report.dao.RegionVisitDAO;
-import org.sunleads.module.report.model.CheckWorkReportModel;
-import org.sunleads.timing.CacheClientRegionIdMap;
-import org.sunleads.timing.CacheClientStaffIdMap;
 
 import edu.emory.mathcs.backport.java.util.Arrays;
 import edu.emory.mathcs.backport.java.util.Collections;

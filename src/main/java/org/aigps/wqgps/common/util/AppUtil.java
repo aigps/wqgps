@@ -1,13 +1,13 @@
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.io.File;
 
 import javax.servlet.ServletContext;
 
+import org.aigps.wqgps.common.cache.SessionData;
+import org.aigps.wqgps.common.entity.WqUserInfo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.sunleads.common.cache.SessionData;
-import org.sunleads.common.entity.WqUserInfo;
 
 public class AppUtil {
 	

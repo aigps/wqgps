@@ -1,17 +1,17 @@
-package org.sunleads.timing;
+package org.aigps.wqgps.timing;
 
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.TimingUtil;
+import org.aigps.wqgps.module.sysmanager.service.SysManagerService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.TimingUtil;
-import org.sunleads.module.sysmanager.service.SysManagerService;
 
 /**
  * …®√Ë÷∏¡Ó◊¥Ã¨JOB

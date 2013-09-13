@@ -1,17 +1,17 @@
-package org.sunleads.module.photo.dao;
+package org.aigps.wqgps.module.photo.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.entity.WqPicHis;
+import org.aigps.wqgps.common.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.entity.WqPicHis;
-import org.sunleads.common.util.DateUtil;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package org.sunleads.common.entity;
+package org.aigps.wqgps.common.entity;
 
 import java.math.BigDecimal;
 
@@ -8,11 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.aigps.wqgps.common.util.StrUtil;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
-import org.sunleads.common.util.StrUtil;
 
 @Entity
 @Table(name = "WQ_PLAN_LOCATE_DETAIL")

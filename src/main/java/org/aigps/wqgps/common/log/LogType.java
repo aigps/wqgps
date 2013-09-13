@@ -1,4 +1,4 @@
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 /**
  * @Title£º<Àà±êÌâ>

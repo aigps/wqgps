@@ -1,4 +1,4 @@
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.aigps.wqgps.common.entity.WqSmsH;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.sms.service.SmsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.entity.WqSmsH;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.sms.service.SmsService;
 
 import sun.misc.BASE64Decoder;
 

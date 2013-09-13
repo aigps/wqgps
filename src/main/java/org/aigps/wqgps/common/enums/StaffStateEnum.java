@@ -1,4 +1,4 @@
-package org.sunleads.common.enums;
+package org.aigps.wqgps.common.enums;
 
 import java.util.EnumSet;
 import java.util.HashMap;

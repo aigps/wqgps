@@ -1,4 +1,4 @@
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.math.BigDecimal;
 import java.util.Map;

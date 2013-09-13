@@ -1,14 +1,14 @@
-package org.sunleads.common.entity;
+package org.aigps.wqgps.common.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Map;
 
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.StrUtil;
+import org.aigps.wqgps.common.util.ValueConvertUtil;
 import org.apache.commons.lang.StringUtils;
 import org.gps.util.EncodeUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.StrUtil;
-import org.sunleads.common.util.ValueConvertUtil;
 
 public class DcGpsReal implements Serializable {
 

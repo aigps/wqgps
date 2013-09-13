@@ -1,16 +1,16 @@
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.SmsModel;
+import org.aigps.wqgps.common.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.SmsModel;
-import org.sunleads.common.util.DateUtil;
 
 import com.huawei.smproxy.SMGPSMProxy;
 import com.huawei.smproxy.comm.smgp.message.SMGPDeliverMessage;
@@ -151,7 +151,6 @@ public class DxSmsSender extends SMGPSMProxy implements ISmsSender{
 		return true;
 	}
 
-	@Override
 	public boolean send(String fNeedRead, String fTakeKey, String fReceivers,
 			String fContent) {
 		// TODO Auto-generated method stub

@@ -1,4 +1,4 @@
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 public class LogModel  implements java.io.Serializable {
 

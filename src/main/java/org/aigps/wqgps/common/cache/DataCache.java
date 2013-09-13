@@ -1,4 +1,4 @@
-package org.sunleads.common.cache;
+package org.aigps.wqgps.common.cache;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,18 +8,18 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.sunleads.common.entity.DcChinaArea;
-import org.sunleads.common.entity.DcGpsReal;
-import org.sunleads.common.entity.SmsModel;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqLogType;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqPlanLocateDetail;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqTradeInfo;
-import org.sunleads.common.entity.WqTradeRole;
+import org.aigps.wqgps.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.entity.DcGpsReal;
+import org.aigps.wqgps.common.entity.SmsModel;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqLogType;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqPlanLocateDetail;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqTradeInfo;
+import org.aigps.wqgps.common.entity.WqTradeRole;
 
 /**
  * Êý¾Ý»º´æ

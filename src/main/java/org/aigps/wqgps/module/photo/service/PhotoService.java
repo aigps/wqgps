@@ -1,15 +1,15 @@
-package org.sunleads.module.photo.service;
+package org.aigps.wqgps.module.photo.service;
 
 import java.util.List;
 
+import org.aigps.wqgps.common.entity.WqPicHis;
+import org.aigps.wqgps.common.util.DataCompressUtil;
+import org.aigps.wqgps.module.photo.dao.PhotoDAO;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.entity.WqPicHis;
-import org.sunleads.common.util.DataCompressUtil;
-import org.sunleads.module.photo.dao.PhotoDAO;
 
 /**
  * 

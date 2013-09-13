@@ -1,12 +1,12 @@
-package org.sunleads.socket.process.cmdresp;
+package org.aigps.wqgps.socket.process.cmdresp;
 
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.CmdModel;
+import org.aigps.wqgps.socket.CmdTypeEnum;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.CmdModel;
-import org.sunleads.socket.CmdTypeEnum;
 
 /**
  * 回复获取当前位置命令

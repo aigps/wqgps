@@ -1,14 +1,14 @@
 
-package org.sunleads.module.webservice;
+package org.aigps.wqgps.module.webservice;
 
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
 
 public class WqServiceDAO{
 

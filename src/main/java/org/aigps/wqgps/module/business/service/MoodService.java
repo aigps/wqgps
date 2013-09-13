@@ -1,15 +1,15 @@
-package org.sunleads.module.business.service;
+package org.aigps.wqgps.module.business.service;
 
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqMood;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqMood;
-import org.sunleads.common.util.AppUtil;
 
 @Component
 @Transactional

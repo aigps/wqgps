@@ -1,4 +1,4 @@
-package org.sunleads.module.report.service;
+package org.aigps.wqgps.module.report.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqTravelPlan;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.GvphUtil;
+import org.aigps.wqgps.module.report.dao.TravelReportDAO;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -13,14 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.DcChinaArea;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqTravelPlan;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.GvphUtil;
-import org.sunleads.module.report.dao.TravelReportDAO;
 /**
  * 该类处理客户被员工拜访的详细情况
  */

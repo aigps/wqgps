@@ -1,4 +1,4 @@
-package org.sunleads.module.location.dao;
+package org.aigps.wqgps.module.location.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,18 +7,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.common.dao.HibernateDAO;
+import org.aigps.wqgps.common.entity.DcGpsHis;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqPlanLocate;
+import org.aigps.wqgps.common.entity.WqPlanLocateDetail;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.GvphUtil;
+import org.aigps.wqgps.common.util.SqlStringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.dao.HibernateDAO;
-import org.sunleads.common.entity.DcGpsHis;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqPlanLocate;
-import org.sunleads.common.entity.WqPlanLocateDetail;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.GvphUtil;
-import org.sunleads.common.util.SqlStringUtil;
 
 /**
  * 定位信息DAO

@@ -1,5 +1,5 @@
 
-package org.sunleads.module.report.model;
+package org.aigps.wqgps.module.report.model;
 
 import java.util.ArrayList;
 import java.util.List;

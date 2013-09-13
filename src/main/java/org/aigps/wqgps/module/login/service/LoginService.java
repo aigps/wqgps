@@ -1,5 +1,4 @@
-package org.sunleads.module.login.service;
-import java.io.UnsupportedEncodingException;
+package org.aigps.wqgps.module.login.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,28 +6,27 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.AuthUtil;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.cache.SessionData;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqMenuInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.log.LogType;
+import org.aigps.wqgps.common.log.LogUtil;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DataCompressUtil;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.codec.Base64;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.cache.SessionData;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqMenuInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.log.LogType;
-import org.sunleads.common.log.LogUtil;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DataCompressUtil;
 
 import flex.messaging.FlexContext;
 

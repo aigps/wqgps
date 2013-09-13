@@ -1,5 +1,5 @@
 
-package org.sunleads.module.webservice;
+package org.aigps.wqgps.module.webservice;
 
 import javax.jws.WebService;
 

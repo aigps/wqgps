@@ -1,4 +1,4 @@
-package org.sunleads.module.monitor.service;
+package org.aigps.wqgps.module.monitor.service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.AuthUtil;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqStaffInfo;
 
 import edu.emory.mathcs.backport.java.util.Collections;
 

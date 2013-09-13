@@ -1,4 +1,4 @@
-package org.sunleads.common.comparator;
+package org.aigps.wqgps.common.comparator;
 
 import java.util.Comparator;
 import java.util.Map;

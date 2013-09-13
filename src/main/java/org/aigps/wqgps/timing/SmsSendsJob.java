@@ -1,4 +1,4 @@
-package org.sunleads.timing;
+package org.aigps.wqgps.timing;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -10,17 +10,17 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.aigps.wqgps.common.dao.HibernateDAO;
+import org.aigps.wqgps.common.entity.WqSmsH;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.security.core.codec.Base64;
+import org.springframework.security.crypto.codec.Base64;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.dao.HibernateDAO;
-import org.sunleads.common.entity.WqSmsH;
-import org.sunleads.common.util.AppUtil;
 
 @Component
 @Transactional
@@ -139,14 +139,12 @@ public class SmsSendsJob extends HibernateDAO<WqSmsH, String>{
 		String sql = "update WQ_SMS_H set state = ? where id=?";
 		this.jdbcTemplate.batchUpdate(sql, new BatchPreparedStatementSetter() {
 			
-			@Override
 			public void setValues(PreparedStatement ag, int index) throws SQLException {
 				WqSmsH model = list.get(index);
 				ag.setString(1, model.getState());
 				ag.setString(2, model.getId());
 			}
 			
-			@Override
 			public int getBatchSize() {
 				return list.size();
 			}

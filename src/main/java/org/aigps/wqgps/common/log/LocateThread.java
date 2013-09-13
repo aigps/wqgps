@@ -1,11 +1,11 @@
 
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 import java.util.List;
 import java.util.Map;
 
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.sms.smgp.DxSmsSender;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.sms.smgp.DxSmsSender;
 
 /**
  * @Title£º<Àà±êÌâ>

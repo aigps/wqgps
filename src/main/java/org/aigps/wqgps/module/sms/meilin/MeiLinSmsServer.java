@@ -1,4 +1,4 @@
-package org.sunleads.module.sms.meilin;
+package org.aigps.wqgps.module.sms.meilin;
 
 import javax.xml.namespace.QName;
 

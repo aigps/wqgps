@@ -1,19 +1,19 @@
 
-package org.sunleads.auth.impl;
+package org.aigps.wqgps.auth.impl;
 
 import java.util.List;
 
+import org.aigps.wqgps.auth.dao.AuthDAO;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqRule;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.dao.AuthDAO;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqRule;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * @Title：员工围栏规则权限实现类
@@ -50,7 +50,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 返回当前员工可以看到的所有围栏规则集合(注：员工也可以做为用户登录系统)
 	 */
-	@Override
 	public List<Object> getResList(WqAuthObj obj) {
 		WqUserInfo user = AppUtil.getUserInfo();
 		List<String> ruleIdList = AuthDAO.getResIdListByStaffId(user.getId(), obj.getId(), jdbcTemplate);
@@ -60,7 +59,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 返回指定员工Id可以看到的所有围栏规则集合
 	 */
-	@Override
 	public List<Object> getResListByOwnerId(WqAuthObj obj, String staffId) {
 		List<String> ruleIdList = AuthDAO.getResIdListByStaffId(staffId, obj.getId(), jdbcTemplate);
 		return publicDAO.findBy("id", ruleIdList, WqRule.class);
@@ -69,7 +67,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 返回哪些员工有权限看到指定围栏规则Id
 	 */
-	@Override
 	public List<Object> getOwnerListByResId(WqAuthObj obj, String ruleId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		List<String> staffIdList = AuthDAO.getStaffIdListByResId(ruleId, obj.getId(), companyId, jdbcTemplate);
@@ -79,7 +76,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 保存员工Id有权限看到的围栏规则Id集合
 	 */
-	@Override
 	public Boolean saveResListByOwnerId(WqAuthObj obj, List<String> ruleIdList,String staffId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -90,7 +86,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 保存客户资源Id被哪些员工看到的集合
 	 */
-	@Override
 	public Boolean saveOwnerListByResId(WqAuthObj obj,List<String> staffIdList,String ruleId){
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -101,7 +96,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 删除指定员工Id所有围栏规则权限
 	 */
-	@Override
 	public Boolean deleteResListByOwnerId(WqAuthObj obj, String staffId) {
 		return AuthDAO.deleteStaffResByStaffId(staffId, obj.getId(), jdbcTemplate);
 	}
@@ -109,7 +103,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 删除指定围栏规则Id的所有权限
 	 */
-	@Override
 	public Boolean deleteResListByResId(WqAuthObj obj, String ruleId) {
 		return AuthDAO.deleteStaffResByResId(ruleId, obj.getId(), jdbcTemplate);
 	}
@@ -117,7 +110,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 为多个员工添加多个围栏规则
 	 */
-	@Override
 	public Boolean addResList(WqAuthObj obj,List<String> staffIdList,List<String> ruleIdList){
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		return AuthDAO.addStaffsResList(obj.getId(), staffIdList, ruleIdList, companyId, jdbcTemplate);
@@ -126,7 +118,6 @@ public class StaffRuleAuth implements IAuthObj{
 	/**
 	 * 为多个员工移除多个围栏规则
 	 */
-	@Override
 	public Boolean deleteResList(WqAuthObj obj,List<String> staffIdList,List<String> ruleIdList){
 		return AuthDAO.deleteStaffsResList(obj.getId(), staffIdList, ruleIdList, jdbcTemplate);
 	}

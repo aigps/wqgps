@@ -1,8 +1,15 @@
-package org.sunleads.module.heb;
+package org.aigps.wqgps.module.heb;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqEleFence;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqPoi;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,13 +19,6 @@ import org.gps.map.util.MapUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqEleFence;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqPoi;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
 
 @Component
 @Transactional

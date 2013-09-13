@@ -1,12 +1,12 @@
 
-package org.sunleads.module.report.model;
+package org.aigps.wqgps.module.report.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.sunleads.common.entity.WqClientInfo;
+import org.aigps.wqgps.common.entity.WqClientInfo;
 
 /**
  * @Title£º<Àà±êÌâ>

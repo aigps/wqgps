@@ -1,4 +1,4 @@
-package org.sunleads.module.report.service;
+package org.aigps.wqgps.module.report.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,20 +7,20 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqClientInfo;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqVisitPlan;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.module.report.dao.RegionVisitDAO;
+import org.aigps.wqgps.module.report.dao.VisitReportDAO;
+import org.aigps.wqgps.module.report.model.VisitReportModel;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqClientInfo;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqVisitPlan;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.module.report.dao.RegionVisitDAO;
-import org.sunleads.module.report.dao.VisitReportDAO;
-import org.sunleads.module.report.model.VisitReportModel;
 /**
  * 该类处理员工做的计划拜访，来获取员工计划拜访客户的详细情况
  */

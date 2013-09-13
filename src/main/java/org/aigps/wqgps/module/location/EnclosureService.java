@@ -1,28 +1,28 @@
-package org.sunleads.module.location;
+package org.aigps.wqgps.module.location;
 
 import java.util.Date;
 import java.util.List;
 
+import org.aigps.wqgps.auth.AuthType;
+import org.aigps.wqgps.auth.AuthUtil;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.entity.WqEleFence;
+import org.aigps.wqgps.common.entity.WqMapRegion;
+import org.aigps.wqgps.common.entity.WqRule;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.log.LogType;
+import org.aigps.wqgps.common.log.LogUtil;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.region.service.RegionService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.AuthType;
-import org.sunleads.auth.AuthUtil;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.DcChinaArea;
-import org.sunleads.common.entity.WqEleFence;
-import org.sunleads.common.entity.WqMapRegion;
-import org.sunleads.common.entity.WqRule;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.log.LogType;
-import org.sunleads.common.log.LogUtil;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.region.service.RegionService;
 /**
  * 电子围栏服务
  * @author admin

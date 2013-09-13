@@ -1,10 +1,10 @@
-package org.sunleads.socket;
+package org.aigps.wqgps.socket;
 
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * √¸¡Óπ§æﬂ¿‡

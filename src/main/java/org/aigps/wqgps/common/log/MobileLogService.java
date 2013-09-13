@@ -1,4 +1,4 @@
-package org.sunleads.common.log;
+package org.aigps.wqgps.common.log;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.util.DateUtil;
 import org.apache.commons.lang.StringUtils;
 import org.gps.map.model.MapLocation;
 import org.gps.map.util.MapUtil;
@@ -19,7 +20,6 @@ import org.gps.util.MathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.util.DateUtil;
 
 /**
  * @Title£º<Àà±êÌâ>

@@ -1,11 +1,10 @@
-package org.sunleads.common.comparator;
+package org.aigps.wqgps.common.comparator;
 
 import java.util.Comparator;
 
-import org.sunleads.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.entity.DcChinaArea;
 
 public 	class DcChinaAreaComparator implements Comparator<DcChinaArea>{
-	@Override
 	public int compare(DcChinaArea o1, DcChinaArea o2) {
 		if(o1.getSort().intValue() > o2.getSort().intValue()){
 			return 1;

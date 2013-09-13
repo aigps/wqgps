@@ -1,13 +1,11 @@
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
 import java.io.File;
-import java.io.IOException;
 
+import org.aigps.wqgps.common.util.AppUtil;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.util.AppUtil;
 
 import com.huawei.smproxy.util.Cfg;
-import com.huawei.smproxy.util.Resource;
 
 /**
  * 提供系统运行环境信息。

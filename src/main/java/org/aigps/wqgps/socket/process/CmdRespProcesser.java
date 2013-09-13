@@ -1,12 +1,12 @@
-package org.sunleads.socket.process;
+package org.aigps.wqgps.socket.process;
 
+import org.aigps.wqgps.socket.CmdTypeEnum;
+import org.aigps.wqgps.socket.process.cmdresp.CmdRespForActive;
+import org.aigps.wqgps.socket.process.cmdresp.CmdRespForCancelActive;
+import org.aigps.wqgps.socket.process.cmdresp.CmdRespForLcsNow;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.gps.ym.model.YmAccessMsg;
-import org.sunleads.socket.CmdTypeEnum;
-import org.sunleads.socket.process.cmdresp.CmdRespForActive;
-import org.sunleads.socket.process.cmdresp.CmdRespForCancelActive;
-import org.sunleads.socket.process.cmdresp.CmdRespForLcsNow;
 
 /**
  * 回复下发指令处理器
@@ -22,7 +22,6 @@ public class CmdRespProcesser implements MsgProcesser {
 	 */
 	public static final String PROCESS_TYPE = "CMD_RESP";
 	
-	@Override
 	public void process(YmAccessMsg accessMsg) {
 		if(accessMsg!=null && accessMsg.getData()!=null){
 			String content = accessMsg.getData();

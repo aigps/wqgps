@@ -1,4 +1,4 @@
-package org.sunleads.socket.process;
+package org.aigps.wqgps.socket.process;
 
 import org.gps.ym.model.YmAccessMsg;
 /**

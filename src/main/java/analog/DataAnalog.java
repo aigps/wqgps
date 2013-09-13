@@ -1,6 +1,6 @@
 package analog;
 
-import org.sunleads.common.util.StrUtil;
+import org.aigps.wqgps.common.util.StrUtil;
 
 /**
  * 外勤数据模拟类

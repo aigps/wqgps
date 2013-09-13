@@ -1,18 +1,18 @@
 
-package org.sunleads.module.report.dao;
+package org.aigps.wqgps.module.report.dao;
 
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.SqlStringUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.SqlStringUtil;
 
 /**
  * @Title£º<Àà±êÌâ>

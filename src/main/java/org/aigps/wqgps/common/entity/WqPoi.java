@@ -1,4 +1,4 @@
-package org.sunleads.common.entity;
+package org.aigps.wqgps.common.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

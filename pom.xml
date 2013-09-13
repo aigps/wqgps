@@ -128,7 +128,7 @@
 	<groupId>org.apache.cxf</groupId>
 	<artifactId>cxf-api</artifactId>
 	<version>2.5.1</version>
-</dependency>
+</dependency> 
  <dependency>
 	<groupId>dom4j</groupId>
 	<artifactId>dom4j</artifactId>
@@ -345,7 +345,11 @@
 	<artifactId>gpsNetty</artifactId>
 	<version>1.0</version>
 </dependency>
-
+<dependency>
+	<groupId>com.huawei</groupId>
+	<artifactId>smproxy</artifactId>
+	<version>1.0</version>
+</dependency>
   </dependencies>
   <build>
     <finalName>wqgps</finalName>

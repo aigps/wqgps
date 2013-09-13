@@ -1,16 +1,16 @@
 
-package org.sunleads.auth;
+package org.aigps.wqgps.auth;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.sunleads.auth.impl.IAuthObj;
-import org.sunleads.auth.impl.UserDepAuth;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqDepInfo;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
+import org.aigps.wqgps.auth.impl.IAuthObj;
+import org.aigps.wqgps.auth.impl.UserDepAuth;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqDepInfo;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
 
 /**
  * @Title£º<Àà±êÌâ>

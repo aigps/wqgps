@@ -1,9 +1,9 @@
-package org.sunleads.module.sms.smgp;
+package org.aigps.wqgps.module.sms.smgp;
 
+import org.aigps.wqgps.module.sms.meilin.MeiLinSmsServer;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
-import org.sunleads.module.sms.meilin.MeiLinSmsServer;
 
 @Component
 public class HxylSmsSender implements ISmsSender{
@@ -36,7 +36,6 @@ public class HxylSmsSender implements ISmsSender{
 		return true;
 	}
 
-	@Override
 	public boolean send(String fNeedRead, String fTakeKey, String fReceivers,
 			String fContent) {
 		try {

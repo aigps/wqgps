@@ -1,4 +1,4 @@
-package org.sunleads.module.admin.service;
+package org.aigps.wqgps.module.admin.service;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,6 +13,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.entity.WqAdvice;
+import org.aigps.wqgps.common.entity.WqCompanyInfo;
+import org.aigps.wqgps.common.entity.WqLogInfo;
+import org.aigps.wqgps.common.entity.WqMenuInfo;
+import org.aigps.wqgps.common.entity.WqPhoneTime;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.entity.WqTradeInfo;
+import org.aigps.wqgps.common.entity.WqTradeRole;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.log.LogType;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.common.util.DateUtil;
+import org.aigps.wqgps.common.util.FileUtil;
+import org.aigps.wqgps.module.sysmanager.service.SysManagerService;
+import org.aigps.wqgps.timing.CacheTradeRoleMap;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -20,24 +38,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.DcChinaArea;
-import org.sunleads.common.entity.WqAdvice;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqLogInfo;
-import org.sunleads.common.entity.WqMenuInfo;
-import org.sunleads.common.entity.WqPhoneTime;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.entity.WqTradeInfo;
-import org.sunleads.common.entity.WqTradeRole;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.log.LogType;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.common.util.DateUtil;
-import org.sunleads.common.util.FileUtil;
-import org.sunleads.module.sysmanager.service.SysManagerService;
-import org.sunleads.timing.CacheTradeRoleMap;
 
 import edu.emory.mathcs.backport.java.util.Collections;
 

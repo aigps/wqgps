@@ -1,25 +1,23 @@
 
-package org.sunleads.auth.impl;
+package org.aigps.wqgps.auth.impl;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import org.aigps.wqgps.auth.dao.AuthDAO;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.cache.SessionData;
+import org.aigps.wqgps.common.dao.PublicDAO;
+import org.aigps.wqgps.common.entity.WqAuthObj;
+import org.aigps.wqgps.common.entity.WqMenuInfo;
+import org.aigps.wqgps.common.entity.WqTradeRole;
+import org.aigps.wqgps.common.entity.WqUserInfo;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.auth.dao.AuthDAO;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.cache.SessionData;
-import org.sunleads.common.dao.PublicDAO;
-import org.sunleads.common.entity.WqAuthObj;
-import org.sunleads.common.entity.WqCompanyInfo;
-import org.sunleads.common.entity.WqMenuInfo;
-import org.sunleads.common.entity.WqTradeRole;
-import org.sunleads.common.entity.WqUserInfo;
-import org.sunleads.common.util.AppUtil;
 
 /**
  * @Title：用户菜单权限实现类
@@ -57,7 +55,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 返回当前用户可以看到的所有菜单集合
 	 */
-	@Override
 	public List<Object> getResList(WqAuthObj obj) {
 		SessionData sd = AppUtil.getSessionData();
 		WqUserInfo user = sd.getUserInfo();
@@ -89,7 +86,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 返回指定用户Id可以看到的所有菜单集合
 	 */
-	@Override
 	public List<Object> getResListByOwnerId(WqAuthObj obj, String userId) {
 		List<String> menuIdList = AuthDAO.getResIdListByUserId(userId, obj.getId(), jdbcTemplate);
 		return getMenuListFromCache(menuIdList);
@@ -109,7 +105,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 返回哪些用户有权限看到指定菜单Id
 	 */
-	@Override
 	public List<Object> getOwnerListByResId(WqAuthObj obj, String menuId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		List<String> userIdList = AuthDAO.getUserIdListByResId(menuId, obj.getId(), companyId, jdbcTemplate);
@@ -119,7 +114,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 保存用户Id有权限看到的菜单Id集合
 	 */
-	@Override
 	public Boolean saveResListByOwnerId(WqAuthObj obj, List<String> menuIdList,String userId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -130,7 +124,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 保存菜单Id的所有用户权限
 	 */
-	@Override
 	public Boolean saveOwnerListByResId(WqAuthObj obj,List<String> userIdList,String menuId) {
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		
@@ -141,7 +134,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 删除指定用户Id所有菜单权限
 	 */
-	@Override
 	public Boolean deleteResListByOwnerId(WqAuthObj obj, String userId) {
 		return AuthDAO.deleteUserResByUserId(userId, obj.getId(), jdbcTemplate);
 	}
@@ -149,7 +141,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 删除指定菜单Id所有权限
 	 */
-	@Override
 	public Boolean deleteResListByResId(WqAuthObj obj,String menuId){
 		return AuthDAO.deleteUserResByResId(menuId, obj.getId(), jdbcTemplate);
 	}
@@ -157,7 +148,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 为多个用户添加多个菜单
 	 */
-	@Override
 	public Boolean addResList(WqAuthObj obj,List<String> userIdList,List<String> menuIdList){
 		String companyId = AppUtil.getUserInfo().getCompanyId();
 		return AuthDAO.addUsersResList(obj.getId(), userIdList, menuIdList, companyId, jdbcTemplate);
@@ -166,7 +156,6 @@ public class UserMenuAuth implements IAuthObj{
 	/**
 	 * 为多个用户移除多个菜单
 	 */
-	@Override
 	public Boolean deleteResList(WqAuthObj obj,List<String> userIdList,List<String> menuIdList){
 		return AuthDAO.deleteUsersResList(obj.getId(), userIdList, menuIdList, jdbcTemplate);
 	}

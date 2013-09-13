@@ -1,4 +1,4 @@
-package org.sunleads.timing;
+package org.aigps.wqgps.timing;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,15 +6,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.comparator.DcChinaAreaComparator;
+import org.aigps.wqgps.common.dao.HibernateDAO;
+import org.aigps.wqgps.common.entity.DcChinaArea;
+import org.aigps.wqgps.common.util.AppUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.comparator.DcChinaAreaComparator;
-import org.sunleads.common.dao.HibernateDAO;
-import org.sunleads.common.entity.DcChinaArea;
-import org.sunleads.common.util.AppUtil;
 
 @Component
 @Transactional

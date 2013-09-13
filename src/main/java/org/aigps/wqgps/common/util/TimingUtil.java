@@ -1,4 +1,4 @@
-package org.sunleads.common.util;
+package org.aigps.wqgps.common.util;
 
 import java.io.FileInputStream;
 import java.util.HashMap;
@@ -78,7 +78,6 @@ public class TimingUtil implements Runnable{
 		return !value.equals(oldValue);
 	}
 
-	@Override
 	public void run() {
 		while(true){
 			try{

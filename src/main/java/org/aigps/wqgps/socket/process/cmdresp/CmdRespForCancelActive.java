@@ -1,13 +1,13 @@
-package org.sunleads.socket.process.cmdresp;
+package org.aigps.wqgps.socket.process.cmdresp;
 
+import org.aigps.wqgps.common.cache.CmdStateCache;
+import org.aigps.wqgps.common.cache.DataCache;
+import org.aigps.wqgps.common.entity.WqStaffInfo;
+import org.aigps.wqgps.common.util.AppUtil;
+import org.aigps.wqgps.module.sysmanager.service.SysManagerService;
+import org.aigps.wqgps.socket.CmdUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.sunleads.common.cache.CmdStateCache;
-import org.sunleads.common.cache.DataCache;
-import org.sunleads.common.entity.WqStaffInfo;
-import org.sunleads.common.util.AppUtil;
-import org.sunleads.module.sysmanager.service.SysManagerService;
-import org.sunleads.socket.CmdUtil;
 
 /**
  * 回复设置定位间隔命令
